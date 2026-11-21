@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Radar — protocols waiting on a launch</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <div class="mark">◉</div>
+    <div>
+      <h1>Token Radar</h1>
+      <p class="sub">Which protocol's token would be worth the most — and how to farm it first.</p>
+    </div>
+  </div>
+  <div class="asof" id="asof"></div>
+</header>
+
+<section class="method">
+  <strong>How the value is built.</strong>
+  <span id="methodText"></span>
+  Protocols that record no token rank first. Protocols whose token already trades sit in a separate
+  band below them, ordered by market cap. A protocol on this board "records no token" — the snapshot
+  carries no token for it; that is not proof it has none.
+</section>
+
+<section class="stats" id="stats"></section>
+
+<section class="controls" id="controls">
+  <input id="q" type="search" placeholder="Search protocol or slug…" aria-label="Search protocols">
+  <select id="status" aria-label="Token status">
+    <option value="all">All protocols</option>
+    <option value="pre-token">Pre-token only</option>
+    <option value="launched">Token already trades</option>
+  </select>
+  <select id="category" aria-label="Category">
+    <option value="all">All categories</option>
+  </select>
+  <select id="sort" aria-label="Sort by">
+    <option value="rank">Sort: rank</option>
+    <option value="value">Sort: implied value</option>
+    <option value="tvl">Sort: TVL</option>
+    <option value="change">Sort: 7d change</option>
+    <option value="age">Sort: days listed</option>
+  </select>
+</section>
+
+<main id="view"></main>
+
+<footer>
+  <p>Data: frozen DefiLlama snapshot. Implied values are this radar's own claim, never a prediction
+  that a token will launch or what it will trade at. Not financial advice.</p>
+</footer>
+
+<script src="zz-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
